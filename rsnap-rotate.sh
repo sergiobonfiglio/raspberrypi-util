@@ -94,10 +94,10 @@ if [ $lastBkpAge -ge $minHours ]; then
 	cat  tmp_out | rsnapreport.pl > $root_dir"RsnapReport.txt" ;
 	rm tmp_out
 	
-	if [ ! $error ]; then
+	if [ ! "$error" ]; then
 		rsnapshot $options -c $conf_file ${intervals[0]}
 	else
-		echo "rsnapshot exited whit errors: "$errors
+		echo "rsnapshot exited whit errors: $errors"
 	fi
 fi
 
